@@ -1,0 +1,27 @@
+{
+  "colour": "Custom",
+  "ssid": "",
+  "password": "",
+  "ntp": "pool.ntp.org",
+  "zone": "IST-1GMT0,M10.5.0,M3.5.0/1",
+  "sec": 0, "min": 0, "hour": 12, "day": 1, "month": 1, "year": 2026,
+  "hue": 160,
+  "brightness": 255,
+  "contrast": 255,
+  "colourScheme": 0,
+  "volume": 0.5,
+  "twelveHour": true,
+  "alarmsActive": true,
+  "LEDOn": false,
+  "fadeOn": true,
+  "screenSwitchOff": true,
+  "autoNextSong": true,
+  "nightScreen": true,
+  "autoUpdate": false,
+  "otaUrl": "",
+  "song": "",
+  "alarms": [
+    {"hour": 7, "minute": 0, "volume": 0.6, "fadeOn": true, "colour": "Custom",
+     "active": false, "song": "", "days": [false, true, true, true, true, true, false]}
+  ]
+}

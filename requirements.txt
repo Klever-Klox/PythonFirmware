@@ -1,0 +1,7 @@
+# CircuitPython libraries the firmware needs on CIRCUITPY/lib.
+# Install with:  circup install -r requirements.txt
+adafruit_st7735r
+adafruit_display_text
+neopixel
+adafruit_ntp
+adafruit_httpserver

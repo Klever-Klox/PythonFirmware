@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.mpy
+dist/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+# never commit a real settings file with WiFi credentials
+settings.local.json

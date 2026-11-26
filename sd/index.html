@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Clock</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1>
+            Welcome To the Alarm Clock's Web Page!
+        </h1>
+        <h2 id="clock">
+            11:42:14 Saturday, December 20 2025
+        </h2>
+        <div id="sdWarning" class="sd-warning hidden">
+            ⚠ SD card not detected — settings, alarms and songs are unavailable until it's reinserted.
+        </div>
+        <div id="buttonWarning" class="sd-warning hidden">
+            ⚠ One or more touch buttons read as stuck at startup and have been disabled — check their wiring. Use this page to control the clock meanwhile.
+        </div>
+    </header>
+    <main class="layout">
+        <section class="panel left">
+            <h2>Controls</h2>
+            <div class="toggle-buttons"> 
+                <button class="toggle-button" id="AlarmOnBtn">
+                    Alarms Active
+                </button> 
+                <button class="toggle-button" id="LEDOnBtn"> 
+                    LED Off 
+                </button> 
+                <button class="toggle-button" id="AlarmRingingBtn"> 
+                    Alarm Ringing 
+                </button>
+            </div>
+            <div class="left-elements">
+                <div>
+                    Contrast:
+                    <input type="range" id="contrastInput" min="0" max="255" step="1" value="255">
+                    <span id="contrast">
+                    255
+                    </span>
+                </div>
+                <div>
+                    Volume:
+                    <input type="range" id="volumeInput" min="0" max="1" step="0.01" value="0.50">
+                    <span id="volume">
+                    0.50
+                    </span>
+                </div>
+                <div>
+                    <h3>
+                        Song:
+                    </h3>
+                    <select class="song-select" id="songSelect"></select>
+                </div>
+            </div>
+            <div class="dropdown-div">
+                LED Colour:
+                <div class="dropdown">
+                    <select class="colour-select" id="colour-select"></select>
+                </div>
+            </div>
+            <div class="left-elements custom-sliders">
+                <h3>Custom Colour</h3> 
+                <input class="slider-colour" type="range" min="1" max="255" value="11" name="CHSV" id="ColIn">
+                <h3>Brightness</h3> 
+                <input class="slider-brightness" type="range" min="1" max="255" value="196" name="Br" id="BrtIn">
+            </div>
+        </section>
+        <section class="panel center">
+            <h2>Set Alarms</h2>
+            <div id="alarms"></div>
+            <button type="button" id="addAlarm">Add Alarm</button>
+        </section>
+        <section class="panel right">
+            <h2>Settings</h2>
+            <div class="switch-row">
+                <span>Screen switches off after 1 min</span>
+                <div class="switch">
+                    <input type="checkbox" class="settings-switch" id="SW">
+                    <span class="slider-round"></span>
+                </div>
+            </div>
+            <div class="switch-row">
+                <span>LED slowly turns on as alarm approaches</span>
+                <div class="switch">
+                    <input type="checkbox" class="settings-switch" id="FLED">
+                    <span class="slider-round"></span>
+                </div>
+            </div>
+            <div class="switch-row">
+                <span>12 hour time</span>
+                <div class="switch">
+                    <input type="checkbox" class="settings-switch" id="12H">
+                    <span class="slider-round"></span>
+                </div>
+            </div>
+
+            <div class="firmware">
+                <h3>Firmware</h3>
+                <div class="fw-row">
+                    <span>Installed</span>
+                    <span id="fwCurrent" class="fw-version">…</span>
+                </div>
+                <div class="fw-row">
+                    <span>Available</span>
+                    <span id="fwLatest" class="fw-version">…</span>
+                </div>
+                <div class="switch-row">
+                    <span>Check for and install updates automatically</span>
+                    <div class="switch">
+                        <input type="checkbox" class="settings-switch" id="AUTOUPD">
+                        <span class="slider-round"></span>
+                    </div>
+                </div>
+                <label class="fw-url">
+                    Update source
+                    <input type="url" id="fwUrl" placeholder="https://…/update.json" spellcheck="false">
+                </label>
+                <div class="fw-actions">
+                    <button type="button" id="fwCheck">Check for Updates</button>
+                    <button type="button" id="fwInstall" class="hidden">Install Update</button>
+                </div>
+                <div id="fwProgress" class="fw-progress hidden">
+                    <div id="fwProgressBar" class="fw-progress-bar"></div>
+                </div>
+                <div id="fwStatus" class="fw-status">Checking status…</div>
+                <div id="fwNotes" class="fw-notes hidden"></div>
+            </div>
+        </section>
+    </main>
+    <script src="/app.js"></script>
+</body>
+</html>
